@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+torch
+torchaudio
+numpy
+torchvision
+pillow
+soundfile
+librosa
+matplotlib
+tqdm
+python-multipart
+ffmpeg-python

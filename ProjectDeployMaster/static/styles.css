@@ -1,0 +1,311 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #222;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #f39c12;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #e0f7fa, #f8f8f8);
+  animation: fadeIn 1.5s ease-in;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.cta {
+  background-color: #111;
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: background-color 0.3s;
+}
+
+.cta:hover {
+  background-color: #f39c12;
+}
+
+/* Upload Section */
+.upload-section {
+  padding: 60px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.upload-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 400px;
+  margin: auto;
+}
+
+.upload-box input[type="file"] {
+  display: block;
+  margin: 20px auto;
+}
+
+#detectBtn {
+  background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+#detectBtn:hover {
+  background-color: #f39c12;
+}
+
+.result-text {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Loader animation */
+.loader {
+  border: 6px solid #eee;
+  border-top: 6px solid #f39c12;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Features */
+.features {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.feature {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+}
+
+.feature i {
+  color: #f39c12;
+}
+
+.feature h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.feature p {
+  color: #777;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  font-size: 1rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* upload button edit */
+
+
+/* Custom styled label */
+.upload-section {
+  padding: 60px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+.upload-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 400px;
+  margin: auto;
+}
+
+/* 1) Hide native file input */
+/* input[type="file"] {
+  display: none;
+} */
+
+/* 2) Button stack: vertical alignment */
+.button-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  align-items: center;
+}
+
+/* 3) Custom “Choose Audio File” label */
+.custom-file-upload {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.custom-file-upload:hover {
+  background-color: #222;
+}
+.custom-file-upload i {
+  margin-right: 8px;
+}
+
+/* 4) Styled Detect Voice button */
+.detect-button {
+  background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.detect-button:hover {
+  background-color: #222;
+}
+
+
+/* file name display */
+
+.file-name-display {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #111;
+  gap: 8px;
+  font-weight: 600;
+}
+
+/* Optional: icon color */
+.file-name-display i {
+  color: #4A90E2;
+}

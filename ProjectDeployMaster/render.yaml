@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: voice-detector-app
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile

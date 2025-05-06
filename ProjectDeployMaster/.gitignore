@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.env
+*.log
+*.sqlite3
+projectmaster/
+# FastAPI
+*.db
+instance/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+projectmaster/
+
+#ignoring pth file
+*.pth
