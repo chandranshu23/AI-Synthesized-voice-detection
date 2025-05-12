@@ -19,6 +19,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
   </head>
   <body>
     <header class="animate__animated animate__fadeInDown">
@@ -49,8 +50,10 @@
           onchange="showFileName()"
         />
 
+        
         <!-- stacked buttons -->
         <div class="button-stack">
+          
           <div
             id="fileNameDisplay"
             class="file-name-display"
@@ -59,12 +62,17 @@
             <i class="fas fa-music"></i>
             <span id="fileNameText"></span>
           </div>
+          <audio id="audio-playback" controls style="display: none;"></audio>
 
           <label for="fileInput" class="custom-file-upload">
             <i class="fas fa-upload"></i> Choose Audio File
           </label>
           <button id="detectBtn" class="detect-button">Detect Voice</button>
-
+	  <button id="recordBtn" class="record-button">
+ 		 <i class="fas fa-microphone"></i> Record 12s Audio
+	</button>
+	<p id="recordStatus" class="result-text" style="margin-top: 10px;"></p>
+	
           <div id="loader" class="loader" style="display: none"></div>
 
           <p id="resultText" class="result-text"></p>
