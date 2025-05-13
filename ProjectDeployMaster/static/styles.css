@@ -24,9 +24,8 @@ header {
   align-items: center;
   padding: 20px 40px;
   position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  /* top: 0; */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
@@ -55,7 +54,7 @@ nav a:hover {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(to right, #e0f7fa, #f8f8f8);
+  /* background: linear-gradient(to right, #e0f7fa, #f8f8f8); */
   animation: fadeIn 1.5s ease-in;
 }
 
@@ -95,7 +94,7 @@ nav a:hover {
   background: #fff;
   border-radius: 10px;
   padding: 40px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   margin: auto;
 }
@@ -126,6 +125,7 @@ nav a:hover {
   font-size: 1.1rem;
   font-weight: 600;
 }
+
 .record-button {
   background-color: #ff4b5c;
   color: white;
@@ -224,6 +224,7 @@ footer p {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -233,6 +234,7 @@ footer p {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -247,11 +249,12 @@ footer p {
   background-color: #f5f5f5;
   text-align: center;
 }
+
 .upload-box {
   background: #fff;
   border-radius: 10px;
   padding: 40px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   margin: auto;
 }
@@ -283,11 +286,13 @@ footer p {
   font-weight: 600;
   font-family: 'Inter', sans-serif;
   transition: background 0.3s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .custom-file-upload:hover {
   background-color: #222;
 }
+
 .custom-file-upload i {
   margin-right: 8px;
 }
@@ -303,8 +308,9 @@ footer p {
   border-radius: 8px;
   font-weight: 600;
   transition: background-color 0.3s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .detect-button:hover {
   background-color: #222;
 }
@@ -324,4 +330,155 @@ footer p {
 /* Optional: icon color */
 .file-name-display i {
   color: #4A90E2;
+}
+
+/* Anshika's contribution */
+* {
+  background: none;
+}
+
+.background-container {
+  position: fixed;
+  /* Keeps the background fixed as you scroll */
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* Make sure it covers the entire height */
+  background-image: url('https://www.gbpuat.ac.in/test/001_resized.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  z-index: -1;
+  /* Place it behind all other content */
+}
+
+/* Ensure all sections that should appear above the background have a higher z-index */
+header,
+.hero,
+.upload-section,
+.about-section {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+
+/* Ensure body and html are set to take full height and not collapse */
+html,
+body {
+  height: 100%;
+}
+
+/* Make sure the content is not covering the background */
+.hero {
+  position: relative;
+  /* z-index: 1; */
+  /* Put it above the background */
+  color: black;
+  padding: 100px 0;
+}
+
+.upload-section,
+.about-section {
+  position: relative;
+  /* z-index: 1; */
+}
+
+.hero,
+#upload,
+#about {
+  position: relative;
+  /* z-index: -2; */
+}
+
+.button-stack,
+.upload-box,
+.custom-file-upload,
+.detect-button {
+  position: relative;
+  z-index: 2;
+}
+
+header {
+  z-index: 1000;
+  /* Ensure header stays on top */
+  position: fixed;
+  width: 100%;
+  background-color: #111;
+}
+
+/* Team Members */
+.team-member {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 22%;
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin: 10px;
+}
+
+.member-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  border: 3px solid #f39c12;
+}
+
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-member h3 {
+  color: #111;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+}
+
+.member-id {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.role {
+  color: #f39c12;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Adjust features container */
+.features {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* LinkedIn Links */
+.linkedin-link {
+  color: #0077b5;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.linkedin-link:hover {
+  color: #005582;
+  transform: scale(1.2);
+}
+
+/* Adjust member ID spacing */
+.member-id {
+  margin-bottom: 15px;
+}
+
+/* Team member card padding adjustment */
+.team-member {
+  padding: 25px 15px;
 }
