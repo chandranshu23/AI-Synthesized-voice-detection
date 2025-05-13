@@ -329,30 +329,21 @@ footer p {
 /* Anshika's contribution */
 
 .background-container {
-    height: 100%;
+    position: fixed;  /* Use fixed to make the background stay in place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;  /* Cover the full viewport height */
     background-image: url('https://www.gbpuat.ac.in/test/001_resized.jpg');
     background-size: cover;
     background-position: center;
-    position: absolute;  /* Ensure it covers the entire screen */
-    width: 100%;
-    z-index: -1;  /* Ensure the content stays on top */
+    z-index: -1;  /* Ensure it stays behind all other content */
 }
 
-header {
-    position: relative;
-    z-index: 1;
-}
-
-.hero {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: white;
-    padding: 100px 0;
-}
-
+header,
+.hero,
 .upload-section,
 .about-section {
     position: relative;
-    z-index: 1;
+    z-index: 1;  /* Ensure content is above the background */
 }
