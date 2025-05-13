@@ -25,7 +25,6 @@ header {
   padding: 20px 40px;
   position: sticky;
   top: 0;
-  z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -360,7 +359,7 @@ header,
 .upload-section,
 .about-section {
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 /* Ensure body and html are set to take full height and not collapse */
@@ -372,7 +371,7 @@ body {
 /* Make sure the content is not covering the background */
 .hero {
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
   /* Put it above the background */
   color: black;
   padding: 100px 0;
@@ -381,7 +380,7 @@ body {
 .upload-section,
 .about-section {
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .hero,
