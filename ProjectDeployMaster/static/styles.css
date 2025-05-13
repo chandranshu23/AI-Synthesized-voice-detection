@@ -334,6 +334,9 @@ footer p {
 }
 
 /* Anshika's contribution */
+* {
+  background: none;
+}
 
 .background-container {
   position: fixed;
