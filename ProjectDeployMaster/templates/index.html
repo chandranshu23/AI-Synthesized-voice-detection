@@ -27,13 +27,16 @@
   </header>
   <div class="background-container"></div>
   <section class="hero" data-aos="fade-up">
-    <h1>Detect AI-Generated Voice</h1>
-    <p>Upload your audio and find out whether it's human or AI.</p>
-    <a href="#upload" class="cta">Get Started</a>
+    <div>
+      <h1>Detect AI-Generated Voice</h1>
+      <p>Upload your audio and find out whether it's human or AI.</p>
+      <a href="#upload" class="cta">Get Started</a>
+    </div>
   </section>
 
   <section id="upload" class="upload-section" data-aos="zoom-in">
-    <div class="upload-box">
+    <div>
+      <div class="upload-box">
       <!-- hidden native file input -->
       <input type="file" id="fileInput" accept="audio/*" style="display: none" onchange="showFileName()" />
 
@@ -61,10 +64,12 @@
         <p id="resultText" class="result-text"></p>
       </div>
     </div>
+    </div>
   </section>
 
   <section id="about" class="about-section" data-aos="fade-up">
-    <h2>About Us</h2>
+    <div>
+      <h2>About Us</h2>
     <p>
       We are final-year Computer Science Engineering students from XYZ
       University. This project aims to detect whether a voice sample is
@@ -86,6 +91,7 @@
         <h3>Reliable Detection</h3>
         <p>Trained with real and synthetic data for maximum accuracy.</p>
       </div>
+    </div>
     </div>
   </section>
 

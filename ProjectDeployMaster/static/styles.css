@@ -383,3 +383,8 @@ body {
   position: relative;
   z-index: 1;
 }
+
+.hero, #upload,#about {
+  position: relative;
+  z-index: -2;
+}
