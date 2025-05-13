@@ -329,21 +329,41 @@ footer p {
 /* Anshika's contribution */
 
 .background-container {
-    position: fixed;  /* Use fixed to make the background stay in place */
+    position: fixed;  /* Keeps the background fixed as you scroll */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;  /* Cover the full viewport height */
+    height: 100vh;  /* Make sure it covers the entire height */
     background-image: url('https://www.gbpuat.ac.in/test/001_resized.jpg');
     background-size: cover;
     background-position: center;
-    z-index: -1;  /* Ensure it stays behind all other content */
+    z-index: -1;  /* Place it behind all other content */
 }
 
+/* Ensure all sections that should appear above the background have a higher z-index */
 header,
 .hero,
 .upload-section,
 .about-section {
     position: relative;
-    z-index: 1;  /* Ensure content is above the background */
+    z-index: 1;
+}
+
+/* Ensure body and html are set to take full height and not collapse */
+html, body {
+    height: 100%;
+}
+
+/* Make sure the content is not covering the background */
+.hero {
+    position: relative;
+    z-index: 1;  /* Put it above the background */
+    color: white;
+    padding: 100px 0;
+}
+
+.upload-section,
+.about-section {
+    position: relative;
+    z-index: 1;
 }
