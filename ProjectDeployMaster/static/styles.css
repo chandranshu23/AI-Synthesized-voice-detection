@@ -390,6 +390,7 @@ body {
   position: relative;
   /* z-index: -2; */
 }
+
 .button-stack,
 .upload-box,
 .custom-file-upload,
@@ -399,6 +400,8 @@ body {
 }
 
 header {
-  z-index: 1000; /* Ensure header stays on top */
+  z-index: 1000;
+  /* Ensure header stays on top */
   position: relative;
+  background-color: #111;
 }
