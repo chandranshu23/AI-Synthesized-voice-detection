@@ -23,7 +23,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  position: sticky;
+  position: fixed;
   top: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -402,6 +402,6 @@ body {
 header {
   z-index: 1000;
   /* Ensure header stays on top */
-  position: fixed;
+  /* position: fixed; */
   background-color: #111;
 }
