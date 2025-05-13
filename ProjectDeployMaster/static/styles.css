@@ -325,3 +325,17 @@ footer p {
 .file-name-display i {
   color: #4A90E2;
 }
+
+/* Anshika's contribution */
+
+.background-container {
+    height: 100%;
+    background-image: url('https://www.gbpuat.ac.in/test/001_resized.jpg'); /* Image URL */
+    background-size: cover; /* This will make the background image cover the whole container */
+    background-position: center; /* Center the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
