@@ -349,7 +349,7 @@ footer p {
   background-image: url('https://www.gbpuat.ac.in/test/001_resized.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.15;
+  opacity: 0.25;
   z-index: -1;
   /* Place it behind all other content */
 }
