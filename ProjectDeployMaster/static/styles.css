@@ -330,12 +330,29 @@ footer p {
 
 .background-container {
     height: 100%;
-    background-image: url('https://www.gbpuat.ac.in/test/001_resized.jpg'); /* Image URL */
-    background-size: cover; /* This will make the background image cover the whole container */
-    background-position: center; /* Center the image */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+    background-image: url('https://www.gbpuat.ac.in/test/001_resized.jpg');
+    background-size: cover;
+    background-position: center;
+    position: absolute;  /* Ensure it covers the entire screen */
+    width: 100%;
+    z-index: -1;  /* Ensure the content stays on top */
+}
+
+header {
+    position: relative;
+    z-index: 1;
+}
+
+.hero {
+    position: relative;
+    z-index: 1;
     text-align: center;
+    color: white;
+    padding: 100px 0;
+}
+
+.upload-section,
+.about-section {
+    position: relative;
+    z-index: 1;
 }
