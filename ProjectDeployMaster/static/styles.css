@@ -406,3 +406,54 @@ header {
   width: 100%;
   background-color: #111;
 }
+
+/* Team Members */
+.team-member {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 22%;
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin: 10px;
+}
+
+.member-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  border: 3px solid #f39c12;
+}
+
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-member h3 {
+  color: #111;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+}
+
+.member-id {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.role {
+  color: #f39c12;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Adjust features container */
+.features {
+  flex-wrap: wrap;
+  justify-content: center;
+}
