@@ -457,3 +457,28 @@ header {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+/* LinkedIn Links */
+.linkedin-link {
+  color: #0077b5;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.linkedin-link:hover {
+  color: #005582;
+  transform: scale(1.2);
+}
+
+/* Adjust member ID spacing */
+.member-id {
+  margin-bottom: 15px;
+}
+
+/* Team member card padding adjustment */
+.team-member {
+  padding: 25px 15px;
+}
