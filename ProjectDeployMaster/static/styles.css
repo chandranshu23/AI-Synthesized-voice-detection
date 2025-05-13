@@ -341,7 +341,7 @@ footer p {
 .background-container {
   position: fixed;
   /* Keeps the background fixed as you scroll */
-  top: 40px;
+  top: 100px;
   left: 0;
   width: 100%;
   height: 100vh;
@@ -384,7 +384,9 @@ body {
   z-index: 1;
 }
 
-.hero, #upload,#about {
+.hero,
+#upload,
+#about {
   position: relative;
   z-index: -2;
 }
