@@ -374,7 +374,7 @@ body {
   position: relative;
   z-index: 1;
   /* Put it above the background */
-  color: white;
+  color: black;
   padding: 100px 0;
 }
 
