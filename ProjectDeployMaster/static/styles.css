@@ -402,6 +402,7 @@ body {
 header {
   z-index: 1000;
   /* Ensure header stays on top */
-  position: sticky;
+  position: fixed;
+  width: 100%;
   background-color: #111;
 }
