@@ -54,7 +54,7 @@ nav a:hover {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(to right, #e0f7fa, #f8f8f8);
+  /* background: linear-gradient(to right, #e0f7fa, #f8f8f8); */
   animation: fadeIn 1.5s ease-in;
 }
 
@@ -396,4 +396,9 @@ body {
 .detect-button {
   position: relative;
   z-index: 2;
+}
+
+header {
+  z-index: 1000; /* Ensure header stays on top */
+  position: relative;
 }
