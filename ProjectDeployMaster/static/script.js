@@ -10,7 +10,7 @@ const recordStatus = document.getElementById('recordStatus');
 const detectVoice = async (file) => {
   loader.style.display = 'block';
   resultText.textContent = '';
-  recordStatus.textContent = 'Recording complete. Detecting...'; // ✅ Add this here
+  // recordStatus.textContent = 'Recording complete. Detecting...'; // ✅ Add this here
 
   try {
     const formData = new FormData();
@@ -29,7 +29,7 @@ const detectVoice = async (file) => {
     console.log("Parsed result:", result);
 
     loader.style.display = 'none';
-    recordStatus.textContent = ''; // Clear after done
+    // recordStatus.textContent = ''; // Clear after done
 
     let displayConfidence;
     if (result.label === "Human Voice") {
@@ -43,7 +43,7 @@ const detectVoice = async (file) => {
   } catch (error) {
     loader.style.display = 'none';
     resultText.textContent = 'Error: ' + error.message;
-    recordStatus.textContent = ''; // Clear in case of error
+    // recordStatus.textContent = ''; // Clear in case of error
   }
 };
 
@@ -81,86 +81,86 @@ function showFileName() {
   }
 }
 
-// Record 12 seconds from mic and send to backend
-async function recordAndDetect() {
-  // ✅ Check for MediaRecorder support first
-  if (typeof MediaRecorder === 'undefined') {
-    alert("MediaRecorder is not supported in your browser.");
-    return;
-  }
+// // Record 12 seconds from mic and send to backend
+// async function recordAndDetect() {
+//   // ✅ Check for MediaRecorder support first
+//   if (typeof MediaRecorder === 'undefined') {
+//     alert("MediaRecorder is not supported in your browser.");
+//     return;
+//   }
 
-  try {
-    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    const mediaRecorder = new MediaRecorder(stream);
-    const audioChunks = [];
+//   try {
+//     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+//     const mediaRecorder = new MediaRecorder(stream);
+//     const audioChunks = [];
 
-    mediaRecorder.ondataavailable = (event) => {
-      audioChunks.push(event.data);
-    };
+//     mediaRecorder.ondataavailable = (event) => {
+//       audioChunks.push(event.data);
+//     };
 
-    mediaRecorder.onstop = async () => {
-      const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
-      const file = new File([audioBlob], 'recorded_audio.webm', { type: 'audio/webm' });
-      const audioURL = URL.createObjectURL(audioBlob);
-      // download file
+//     mediaRecorder.onstop = async () => {
+//       const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+//       const file = new File([audioBlob], 'recorded_audio.webm', { type: 'audio/webm' });
+//       const audioURL = URL.createObjectURL(audioBlob);
+//       // download file
       
-      const a = document.createElement('a');
-      a.href = audioURL;
-      a.download = "recorded-audio.webm";
-      a.textContent = "Download Recording";
-      document.body.appendChild(a);
-      document.body.removeChild(a);
+//       const a = document.createElement('a');
+//       a.href = audioURL;
+//       a.download = "recorded-audio.webm";
+//       a.textContent = "Download Recording";
+//       document.body.appendChild(a);
+//       document.body.removeChild(a);
 
-      // audio playback
-      const audioPlayer = document.getElementById('audio-playback');
-      audioPlayer.src = audioURL;
-      audioPlayer.style.display = "block";
-      audioPlayer.play();
-
-
+//       // audio playback
+//       const audioPlayer = document.getElementById('audio-playback');
+//       audioPlayer.src = audioURL;
+//       audioPlayer.style.display = "block";
+//       audioPlayer.play();
 
 
-      // Convert WebM to WAV using ffmpeg.js in the browser
-      // const wavFile = await convertWebMToWAV(file);
-      // Send the converted WAV file to backend for detection
-      detectVoice(file);
-      // Reset UI
-      recordBtn.disabled = false;
-      recordBtn.innerHTML = '<i class="fas fa-microphone"></i> Record 12s Audio';
-      recordStatus.textContent = 'Recording complete. Detecting...';
-    };
 
-    // Disable record button during recording
-    recordBtn.disabled = true;
-    recordBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Recording...';
-    recordStatus.textContent = 'Recording for 12 seconds...';
 
-    mediaRecorder.start();
-    console.log("Recording started...");
+//       // Convert WebM to WAV using ffmpeg.js in the browser
+//       // const wavFile = await convertWebMToWAV(file);
+//       // Send the converted WAV file to backend for detection
+//       detectVoice(file);
+//       // Reset UI
+//       recordBtn.disabled = false;
+//       recordBtn.innerHTML = '<i class="fas fa-microphone"></i> Record 12s Audio';
+//       recordStatus.textContent = 'Recording complete. Detecting...';
+//     };
+
+//     // Disable record button during recording
+//     recordBtn.disabled = true;
+//     recordBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Recording...';
+//     recordStatus.textContent = 'Recording for 12 seconds...';
+
+//     mediaRecorder.start();
+//     console.log("Recording started...");
     
-    // Stop recording after 12 seconds
-    setTimeout(() => {
-      if (mediaRecorder.state === "recording") {
-        console.log("Stopping recording...");
-        mediaRecorder.stop();
-        stream.getTracks().forEach(track => track.stop()); // Stop the stream's tracks
-      }
-    }, 12000);
+//     // Stop recording after 12 seconds
+//     setTimeout(() => {
+//       if (mediaRecorder.state === "recording") {
+//         console.log("Stopping recording...");
+//         mediaRecorder.stop();
+//         stream.getTracks().forEach(track => track.stop()); // Stop the stream's tracks
+//       }
+//     }, 12000);
     
-  } catch (err) {
-    recordStatus.textContent = 'Microphone access failed: ' + err.message;
-    recordBtn.disabled = false;
-    recordBtn.innerHTML = '<i class="fas fa-microphone"></i> Record 12s Audio';
-  }
-}
+//   } catch (err) {
+//     recordStatus.textContent = 'Microphone access failed: ' + err.message;
+//     recordBtn.disabled = false;
+//     recordBtn.innerHTML = '<i class="fas fa-microphone"></i> Record 12s Audio';
+//   }
+// }
 
 
-// Event listener for Record Button
-recordBtn.addEventListener('click', recordAndDetect);
+// // Event listener for Record Button
+// recordBtn.addEventListener('click', recordAndDetect);
 
-// Event listener for File Input (to clear status when a new file is selected)
-document.getElementById('fileInput').addEventListener('change', function () {
-  recordStatus.textContent = ''; // Clear status message like "Recording complete. Detecting..."
-  recordBtn.disabled = false;
-  recordBtn.innerHTML = '<i class="fas fa-microphone"></i> Record 12s Audio';
-});
+// // Event listener for File Input (to clear status when a new file is selected)
+// document.getElementById('fileInput').addEventListener('change', function () {
+//   recordStatus.textContent = ''; // Clear status message like "Recording complete. Detecting..."
+//   recordBtn.disabled = false;
+//   recordBtn.innerHTML = '<i class="fas fa-microphone"></i> Record 12s Audio';
+// });
