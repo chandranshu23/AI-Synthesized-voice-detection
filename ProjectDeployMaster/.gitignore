@@ -16,4 +16,4 @@ Thumbs.db
 projectmaster/
 
 #ignoring pth file
-*.pth
+# *.pth
